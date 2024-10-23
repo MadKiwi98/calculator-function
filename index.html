@@ -38,7 +38,7 @@
 </head>
 <body>
 
-    <h1>ML Per Pulse Calculator</h1>
+    <h1>Ml Per Pulse Calculator</h1>
     <div class="container">
         <div class="input-box">
             <label for="pulses">Pulses:</label>
@@ -60,7 +60,7 @@
             const resultField = document.getElementById('resultValue');
 
             if (pulses > 0) {
-                const millilitresPerPulse = litres / pulses * 1000; // Divide litres by pulses, then convert to millilitres
+                const millilitresPerPulse = litres / pulses; // Correct calculation: litres divided by pulses
                 resultField.textContent = millilitresPerPulse.toFixed(2); // Show result with 2 decimal places
             } else {
                 resultField.textContent = 'Error: Pulses must be greater than 0';
