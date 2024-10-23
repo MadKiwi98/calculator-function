@@ -25,11 +25,6 @@
             padding: 5px;
             font-size: 1em;
         }
-        button {
-            padding: 5px 10px;
-            font-size: 1em;
-            cursor: pointer;
-        }
         #result {
             margin-top: 20px;
             font-size: 1.2em;
@@ -38,20 +33,19 @@
 </head>
 <body>
 
-    <h1>Ml Per Pulse Calculator</h1>
+    <h1>ML Per Pulse Calculator</h1>
     <div class="container">
         <div class="input-box">
             <label for="pulses">Pulses:</label>
-            <input type="number" id="pulses" placeholder="Enter pulses" required>
+            <input type="number" id="pulses" placeholder="Enter pulses" oninput="calculate()" required>
         </div>
         <div class="input-box">
             <label for="litres">Litres:</label>
-            <input type="number" id="litres" placeholder="Enter litres" required>
+            <input type="number" id="litres" placeholder="Enter litres" oninput="calculate()" required>
         </div>
-        <button onclick="calculate()">Calculate</button>
     </div>
 
-    <div id="result">ML per Pulse: <span id="resultValue"></span></div>
+    <div id="result">ML Per Pulse: <span id="resultValue"></span></div>
 
     <script>
         function calculate() {
@@ -63,7 +57,7 @@
                 const millilitresPerPulse = litres / pulses; // Correct calculation: litres divided by pulses
                 resultField.textContent = millilitresPerPulse.toFixed(2); // Show result with 2 decimal places
             } else {
-                resultField.textContent = 'Error: Pulses must be greater than 0';
+                resultField.textContent = ''; // Clear result if pulses are 0 or invalid
             }
         }
     </script>
